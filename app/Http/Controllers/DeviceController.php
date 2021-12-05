@@ -24,6 +24,8 @@ class DeviceController extends Controller
                  $cardTapped->delete();
                  echo $liter * 5;
              } else {
+                 $cardTapped = CardTapped::query()->first();
+                 $cardTapped->delete();
                  echo "Insufficient funds";
              }
 
