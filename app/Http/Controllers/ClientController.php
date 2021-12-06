@@ -25,6 +25,14 @@ class ClientController extends Controller
 
         return redirect()->back()->with('success', 'Client created successfully');
     }
+    public function updateBalance(Client $client){
+        $data = request()->validate([
+            'balance' => ['required']
+        ]);
+        $client->update(['balance' => $client->balance + $data['balance']]);
+
+        return redirect()->back()->with('success', 'Balance assigned successfully!');
+    }
     public function update(Client $client){
 
     }

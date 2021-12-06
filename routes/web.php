@@ -37,6 +37,7 @@ Route::prefix('stations')->middleware(['auth'])->group(function () {
 Route::prefix('')->middleware(['auth'])->group(function () {
     Route::get('', [ClientController::class, 'index'])->name('clients.index');
     Route::post('', [ClientController::class, 'store'])->name('client.store');
+    Route::post('topup/{client}',[ClientController::class, 'updateBalance'])->name('client.reload');
     Route::put('{client}', [ClientController::class, 'update'])->name('client.update');
     Route::delete('{client}', [ClientController::class, 'destroy'])->name('client.destroy');
 });
