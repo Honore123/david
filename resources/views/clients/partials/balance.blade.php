@@ -1,4 +1,4 @@
-<div class="modal fade" id="reloadBalance" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="reloadBalance0-{{$client-id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <form action="{{route('client.reload',$client->id)}}" method="post">
